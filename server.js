@@ -43,6 +43,13 @@ app.get('/', async function (request, response) {
    response.render('index.liquid')
 })
 
+// Maak een GET route voor de index (meestal doe je dit in de root, als /)
+app.get('/nieuws', async function (request, response) {
+  // Render index.liquid uit de Views map
+  // Geef hier eventueel data aan mee
+  response.render('nieuws.liquid')
+})
+
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt
 app.post('/', async function (request, response) {
