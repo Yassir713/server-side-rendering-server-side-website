@@ -97,32 +97,47 @@ h6 {
     border: 1px solid #f0c779;
     border-radius: 10px;
     display: relative;
-    text-align: center;
+    padding: 8px;
     height: 30%;
     width: 80%;
     background-color: var(--news-color);
     background-size: cover;
     background-repeat: no-repeat;
     margin-top: 10px;
+    @media (min-width: 1200px) {
+        width: 50%;
+    }
+
+}
+
+.foto {
+    width: 95%;
 }
 
 .tag {
     background-color: var(--news-color);
     border: 2px solid #000000;
     border-radius: 10px;
-    width: 35%;
+    width: 105px;
     margin-left: 10px;
 }
 
 .tijd {
-    margin-top: -36px;
-    margin-left: 180px;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -45px;
+    width: 95%;
+
 }
 
+
+
 footer {
+    position: sticky;
     display: flex;
-    justify-content: space-between;    
-    margin-top: 120px;
+    justify-content: center;
+    width: 100%;  
+    margin-top: 50px;
 }
 
 .link {
@@ -133,4 +148,13 @@ footer {
 footer a {
     color: #000000;
     text-decoration: none;
+}
+
+footer ul {
+    display: flex;
+    gap: 30px;
+}
+
+footer ul li{
+    list-style: none;
 }
