@@ -3,6 +3,66 @@
     --collection-color: hsl(194.52, 100%, 87.84%);
 
 }
+
+@font-face {
+    font-family: "Sansita";
+    src: url('/fonts/Sansita-Regular.otf') format('opentype');
+}
+
+@font-face {
+    font-family: "Open Sans";
+    src: url('/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+body {
+        line-height: 1.4;
+        font-family: "Open Sans", sans-serif;
+}
+
+header h1 {
+    font-family: "Sansita", sans-serif;
+    font-weight: bold;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Sansita", sans-serif;
+    font-weight: normal;
+}
+
+p,
+a,
+li {
+        font-family: "Open Sans", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        font-size: clamp(1rem, 0.8rem + 1vw, 1.125rem);
+}
+
+/* Responsive font sizes */
+h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem); /* 24px = 1.5rem */
+}
+
+h2 {
+    font-size: clamp(1.25rem, 4vw, 2.25rem); /* 20px = 1.25rem */
+}
+
+h3 {
+    font-size: clamp(1.375rem, 3vw, 1.75rem);
+}
+
+h4 {
+    font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+}
+
+h5 {
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+h6 {
+    font-size: clamp(0.875rem, 1vw, 1rem);
+}
+
 .titel {
     text-align: center;
     margin-top: 35px;
