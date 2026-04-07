@@ -43,12 +43,45 @@ app.get('/', async function (request, response) {
    response.render('index.liquid')
 })
 
-// Maak een GET route voor de index (meestal doe je dit in de root, als /)
+// Route 3: alles (geen filter)
 app.get('/nieuws', async function (request, response) {
-  // Render index.liquid uit de Views map
-  // Geef hier eventueel data aan mee
-  response.render('nieuws.liquid')
+
+  const search = request.query.search
+
+  let newsParams = {
+    'fields': 'title,image,slug'
+  }
+
+  const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news?' + new URLSearchParams(newsParams))
+  const newsResponseJSON = await newsResponse.json()
+
+  response.render('nieuws.liquid', {
+    // nieuws: tempDummyNews.data,
+    nieuws: newsResponseJSON.data,
+    huidigPad: request.path,
+    zoeken: search
+  })
 })
+
+app.post('/nieuws', async function (request, response) {
+
+  const search = request.body.search
+  console.log(request.body)
+
+  let newsParams = {
+    'fields': 'title,image,slug'
+  }
+  
+  if(request.body.search != undefined){
+    newsParams['search'] = search
+  } 
+
+  const newsResponse = await fetch('https://fdnd-agency.directus.app/items/frankendael_news?' + new URLSearchParams(newsParams))
+  const newsResponseJSON = await newsResponse.json()
+
+  response.redirect('/nieuws')
+})
+
 
 // Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
 // Hier doen we nu nog niets mee, maar je kunt er mee spelen als je wilt

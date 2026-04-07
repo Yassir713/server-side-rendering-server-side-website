@@ -1,0 +1,62 @@
+{% render 'partials/head.liquid' %}
+
+<main>
+
+  <!-- Top bar -->
+  <section class="topbar">
+    <a href="/" class="terug">← Terug</a>
+    <h1 class="titel">Veld nieuws</h1>
+  </section>
+
+  <!-- Filters -->
+  <section class="filters">
+    <button class="filter actief">Laatste</button>
+    <button class="filter">In de bloei</button>
+    <button class="filter">Na de bloei</button>
+  </section>
+
+  <!-- Search -->
+  <section class="search">
+    <input type="text" placeholder="search">
+  </section>
+
+  <!-- Nieuws lijst -->
+  <section class="nieuws-lijst">
+
+    <article class="nieuws-item">
+      <img src="assets/duizendblad.png" alt="duizendblad">
+      <div>
+        <p class="tag">Bloemenveld</p>
+        <p><strong>Laatste kans om de na bloei van de duizendblad te zien.</strong></p>
+      </div>
+    </article>
+
+    <article class="nieuws-item">
+      <img src="assets/zaadknoppen.png" alt="zaadknoppen">
+      <div>
+        <p class="tag">Bloemenveld</p>
+        <p><strong>De zaadknoppen van de teunisbloem zijn nu goed te zien</strong></p>
+      </div>
+    </article>
+
+    <article class="nieuws-item">
+      <img src="assets/cola.png" alt="cola citroenkruid">
+      <div>
+        <p class="tag">Bloemenveld</p>
+        <p><strong>Cola citroenkruid wordt binnenkort vervangen</strong></p>
+      </div>
+    </article>
+
+    <article class="nieuws-item">
+      <img src="assets/voedseleiland.png" alt="voedseleiland">
+      <div>
+        <p class="tag">Interactieve kaart</p>
+        <p><strong>Nieuwe plant bij voedseleiland 1</strong></p>
+      </div>
+    </article>
+
+  </section>
+
+</main>
+
+{% render 'partials/foot.liquid' %}
